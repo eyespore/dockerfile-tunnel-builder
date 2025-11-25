@@ -1,0 +1,6 @@
+#!/bin/bash
+autossh -M 0 -N \
+  -L 0.0.0.0:4445:127.0.0.1:445 \
+  -o StrictHostKeyChecking=no \
+  -o UserKnownHostsFile=/dev/null \
+  SSH_HOST

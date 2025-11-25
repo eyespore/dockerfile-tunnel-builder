@@ -1,0 +1,3 @@
+#!/bin/sh
+socat tcp6-listen:445,reuseaddr,fork tcp4-connect:localhost:4445 &
+wait

@@ -1,0 +1,18 @@
+services:
+  socat-tcpv6:
+    image: alpine/socat
+    network_mode: host
+    entrypoint: /bin/sh entrypoint.sh
+    volumes:
+      - ${PWD}/entrypoint-socat.sh:/entrypoint.sh
+
+  ssh-client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    tty: true
+    entrypoint: /bin/bash entrypoint.sh
+    volumes:
+      - ${HOME}/.ssh/:/root/.ssh
+      - ${PWD}/entrypoint-ssh.sh:/entrypoint.sh
