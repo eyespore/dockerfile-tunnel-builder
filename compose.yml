@@ -14,5 +14,5 @@ services:
     tty: true
     entrypoint: /bin/bash /entrypoint.sh
     volumes:
-      - ${HOME}/.ssh/:/root/.ssh
+      - ${HOME}/.ssh/:/home/appuser/.ssh
       - ${PWD}/entrypoint-ssh.sh:/entrypoint.sh
